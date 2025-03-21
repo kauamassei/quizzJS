@@ -70,6 +70,174 @@ const questions = [
       },
     ],
   },
+  {
+    question: "Qual tag HTML é usada para criar um parágrafo?",
+    answers: [
+      {
+        answer: "<h1>",
+        correct: false,
+      },
+      {
+        answer: "<div>",
+        correct: false,
+      },
+      {
+        answer: "<p>",
+        correct: true,
+      },
+      {
+        answer: "<span>",
+        correct: false,
+      },
+    ],
+  },
+  {
+    question: "Qual a linguagem usada para estilizar páginas web?",
+    answers: [
+      {
+        answer: "HTML",
+        correct: false,
+      },
+      {
+        answer: "CSS",
+        correct: true,
+      },
+      {
+        answer: "Python",
+        correct: false,
+      },
+      {
+        answer: "Java",
+        correct: false,
+      },
+    ],
+  },
+  {
+    question: "Qual o propósito do atributo 'alt' na tag <img>?",
+    answers: [
+      {
+        answer: "Definir o tamanho da imagem",
+        correct: false,
+      },
+      {
+        answer: "Alterar a cor da imagem",
+        correct: false,
+      },
+      {
+        answer: "Carregar uma imagem alternativa",
+        correct: false,
+      },
+      {
+        answer: "Descrever o conteúdo da imagem",
+        correct: true,
+      },
+    ],
+  },
+  {
+    question: "O que significa a sigla DOM em JavaScript?",
+    answers: [
+      {
+        answer: "Document Object Model",
+        correct: true,
+      },
+      {
+        answer: "Data Object Manager",
+        correct: false,
+      },
+      {
+        answer: "Document Output Method",
+        correct: false,
+      },
+      {
+        answer: "Data Oriented Mapping",
+        correct: false,
+      },
+    ],
+  },
+  {
+    question: "Qual é o operador usado para atribuição em JavaScript?",
+    answers: [
+      {
+        answer: "=",
+        correct: true,
+      },
+      {
+        answer: "==",
+        correct: false,
+      },
+      {
+        answer: "===",
+        correct: false,
+      },
+      {
+        answer: "::",
+        correct: false,
+      },
+    ],
+  },
+  {
+    question: "Qual linguagem é conhecida como a base da web?",
+    answers: [
+      { answer: "Python", correct: false },
+      { answer: "HTML", correct: true },
+      { answer: "C++", correct: false },
+      { answer: "Java", correct: false },
+    ],
+  },
+  {
+    question: "Qual protocolo é usado para navegação segura?",
+    answers: [
+      { answer: "HTTP", correct: false },
+      { answer: "FTP", correct: false },
+      { answer: "SMTP", correct: false },
+      { answer: "HTTPS", correct: true },
+    ],
+  },
+  {
+    question: "O que significa a sigla SQL?",
+    answers: [
+      { answer: "Simple Query Language", correct: false },
+      { answer: "Structured Query Language", correct: true },
+      { answer: "Standard Query Language", correct: false },
+      { answer: "System Query Language", correct: false },
+    ],
+  },
+  {
+    question: "O que é React?",
+    answers: [
+      { answer: "Uma biblioteca JavaScript", correct: true },
+      { answer: "Um framework CSS", correct: false },
+      { answer: "Um servidor web", correct: false },
+      { answer: "Um banco de dados", correct: false },
+    ],
+  },
+  {
+    question: "Para que serve o comando 'git clone'?",
+    answers: [
+      { answer: "Enviar alterações para o repositório", correct: false },
+      { answer: "Clonar um repositório", correct: true },
+      { answer: "Criar um novo repositório", correct: false },
+      { answer: "Atualizar o repositório local", correct: false },
+    ],
+  },
+  {
+    question: "Qual propriedade do CSS é usada para mudar a cor do texto?",
+    answers: [
+      { answer: "background-color", correct: false },
+      { answer: "text-color", correct: false },
+      { answer: "font-color", correct: false },
+      { answer: "color", correct: true },
+    ],
+  },
+  {
+    question: "Qual é o resultado de 2 + '2' no JavaScript?",
+    answers: [
+      { answer: "4", correct: false },
+      { answer: "'22'", correct: true },
+      { answer: "NaN", correct: false },
+      { answer: "undefined", correct: false },
+    ],
+  },
 ];
 
 const init = () => {
@@ -149,7 +317,7 @@ const nextQuestion = () => {
     if (actualQuestion >= questions.length) {
       //apresenta a msg de sucesso
       showSuccessMessage();
-      return
+      return;
     }
 
     createQuestion(actualQuestion);
@@ -179,6 +347,16 @@ const showSuccessMessage = () => {
   const totalQuestions = document.querySelector("#questions-qty");
   totalQuestions.textContent = questions.length;
 };
+
+// botao de zerar
+const restartBtn = document.querySelector("#restart");
+
+restartBtn.addEventListener("click", () => {
+  actualQuestion = 0;
+  points = 0;
+  hideOrShowQuizz();
+  init();
+});
 
 //
 init();
