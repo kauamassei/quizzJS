@@ -91,6 +91,37 @@ const createQuestion = (i) => {
 
     questionText.textContent = questions[i].question;
     questionNumber.textContent = i + 1;
+
+    // insere as alternativas
+    questions[i].answers.forEach(function(answer, i) {
+
+        // cria o template do botão quizz
+        const answerTemplate = document.querySelector(".answer-template").cloneNode(true);
+
+        const letterBtn = answerTemplate.querySelector(".btn-letter");
+        const answerText = answerTemplate.querySelector(".question-answer");
+
+        letterBtn.textContent = letters[i];
+        answerText.textContent = answer['answer'];
+
+        answerTemplate.setAttribute("correct-answer", answer["correct"]);
+
+        // remocendo hide e template class
+        answerTemplate.classList.remove("hide");
+        answerTemplate.classList.remove("answer-template")
+
+        // inserir a alternativa na tela
+
+        answersBox.appendChild(answerTemplate);
+
+        // inserir um evento de click no botão
+        answerTemplate.addEventListener("click", function() {
+            console.log(this)
+        });
+    });
+
+    // incrementando numero da questão
+    actualQuestion++;
 };
 
 //
