@@ -85,8 +85,8 @@ const createQuestion = (i) => {
   });
 
   // alterando texto da pergunta
-  const questionText = question.querySelector("#question-text");
-  const questionNumber = question.querySelector("#question-number");
+  const questionText = document.querySelector("#question-text");
+  const questionNumber = document.querySelector("#question-number");
 
   questionText.textContent = questions[i].question;
   questionNumber.textContent = i + 1;
@@ -147,13 +147,37 @@ const nextQuestion = () => {
   setTimeout(function () {
     // verifica se ainda há perguntas
     if (actualQuestion >= questions.length) {
-        //apresenta a msg de sucesso
+      //apresenta a msg de sucesso
+      showSuccessMessage();
+      return
     }
 
     createQuestion(actualQuestion);
+  }, 700);
+};
 
-    
-  }, 1500);
+const hideOrShowQuizz = () => {
+  quizzContainer.classList.toggle("hide");
+  scoreContainer.classList.toggle("hide");
+};
+
+const showSuccessMessage = () => {
+  hideOrShowQuizz();
+
+  // calcular score
+  const score = ((points / questions.length) * 100).toFixed(2);
+
+  const displayScore = document.querySelector("#display-score span");
+
+  displayScore.textContent = score.toString();
+
+  // alterar o numero de perguntas corretas
+  const correctAnswers = document.querySelector("#correct-answers");
+  correctAnswers.textContent = points;
+
+  // altera o total de perguntas
+  const totalQuestions = document.querySelector("#questions-qty");
+  totalQuestions.textContent = questions.length;
 };
 
 //
