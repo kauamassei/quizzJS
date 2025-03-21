@@ -238,6 +238,132 @@ const questions = [
       { answer: "undefined", correct: false },
     ],
   },
+  {
+    question: "O que significa HTML?",
+    answers: [
+      {
+        answer: "HyperText Markup Language",
+        correct: true,
+      },
+      {
+        answer: "Hyper Transfer Markup Language",
+        correct: false,
+      },
+      {
+        answer: "Home Tool Markup Language",
+        correct: false,
+      },
+      {
+        answer: "HyperText Machine Language",
+        correct: false,
+      },
+    ],
+  },
+  {
+    question: "Qual comando do Git é usado para criar um novo branch?",
+    answers: [
+      {
+        answer: "git checkout",
+        correct: false,
+      },
+      {
+        answer: "git branch",
+        correct: true,
+      },
+      {
+        answer: "git push",
+        correct: false,
+      },
+      {
+        answer: "git commit",
+        correct: false,
+      },
+    ],
+  },
+  {
+    question: "Qual é a função do método Array.map() em JavaScript?",
+    answers: [
+      {
+        answer: "Transformar cada elemento de um array",
+        correct: true,
+      },
+      {
+        answer: "Filtrar elementos de um array",
+        correct: false,
+      },
+      {
+        answer: "Ordenar os elementos de um array",
+        correct: false,
+      },
+      {
+        answer: "Remover elementos duplicados de um array",
+        correct: false,
+      },
+    ],
+  },
+  {
+    question: "O que é o React?",
+    answers: [
+      {
+        answer: "Uma biblioteca para construção de interfaces",
+        correct: true,
+      },
+      {
+        answer: "Um framework para estilização de sites",
+        correct: false,
+      },
+      {
+        answer: "Um banco de dados NoSQL",
+        correct: false,
+      },
+      {
+        answer: "Uma linguagem de programação",
+        correct: false,
+      },
+    ],
+  },
+  {
+    question: "Qual o significado de API?",
+    answers: [
+      {
+        answer: "Application Programming Interface",
+        correct: true,
+      },
+      {
+        answer: "Application Process Integration",
+        correct: false,
+      },
+      {
+        answer: "Application Program Instruction",
+        correct: false,
+      },
+      {
+        answer: "Application Programming Interaction",
+        correct: false,
+      },
+    ],
+  },
+  {
+    question: "Qual o principal objetivo do TypeScript?",
+    answers: [
+      {
+        answer: "Adicionar tipagem estática ao JavaScript",
+        correct: true,
+      },
+      {
+        answer: "Criar estilos dinâmicos",
+        correct: false,
+      },
+      {
+        answer: "Otimizar a performance do Node.js",
+        correct: false,
+      },
+      {
+        answer: "Compilar arquivos para Python",
+        correct: false,
+      },
+    ],
+  },
 ];
 
 const init = () => {
